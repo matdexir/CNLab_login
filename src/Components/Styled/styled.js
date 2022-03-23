@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const Button = styled.button`
     background: transparent;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 2px solid blue;
     color: blue;
     padding: 0.25em 1em;
@@ -25,6 +25,7 @@ const Button = styled.button`
 
 const CenteredDiv = styled.div`
     background-color: #1f1f1f;
+		border-radius: 25px;
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 20vh;
@@ -45,7 +46,7 @@ const Space = styled.div`
 
 const Title = styled.h1`
     background-color: #1f1f1f;
-    font-size: 20px;
+    font-size: 1.75rem;
     color: black;
     text-align: center;
 `;

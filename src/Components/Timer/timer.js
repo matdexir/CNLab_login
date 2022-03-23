@@ -8,7 +8,7 @@ const Timer = ({timeLimit, setTimeLimit}) => {
     function toggle() {
         setIsActive(!isActive);
 				// FIXME: May result in unwanted behavior
-				setTimeLimit(seconds);
+				// setTimeLimit(seconds);
     }
 
     function reset() {
@@ -30,8 +30,8 @@ const Timer = ({timeLimit, setTimeLimit}) => {
 
     return (
         <>
-						<Title style={{ fontSize: "30px"}}>
-                {Math.floor(seconds / 60)}:{seconds % 60}s
+						<Title style={{ fontSize: "2rem"}}>
+                {Math.floor(seconds / 60)}:{seconds % 60}
 						</Title>
 						<Space>
                 <Button primary onClick={toggle} style={{ width: "20vw", marginRight: "5vw" }}>
