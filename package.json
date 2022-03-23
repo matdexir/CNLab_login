@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/plots": "^1.0.9",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -18,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "lynt",
-"precommit": "yarn lint-staged && yarn lint"
+    "precommit": "yarn lint-staged && yarn lint"
   },
   "eslintConfig": {
     "extends": [
@@ -27,11 +28,11 @@
     ]
   },
   "lint-staged": {
-   "*.{js,json,css,md}": [
+    "*.{js,json,css,md}": [
       "prettier --config .prettierrc --write",
       "git add"
-   ]
-},
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

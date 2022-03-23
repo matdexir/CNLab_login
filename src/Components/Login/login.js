@@ -1,48 +1,54 @@
-import  styled from "styled-components";
+import { useState } from "react";
+import { Title, Button, Space, CenteredDiv, Input } from "../Styled/styled";
+import Register from "./register";
 
-const Button = styled.button`
-	background: transparent;
-  border-radius: 3px;
-  border: 2px solid blue;
-  color: blue;
-  margin: 0 1em;
-  padding: 0.25em 1em
-
-	
-`
-
-const CenteredDiv = styled.div`
-	margin-left: 20vw;
-	margin-right: 20vw;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
-	padding: 5vw;
-	border: 2px solid blue;
-`
-
-const Input = styled.input`
-	size: 5vw;
-`
-
-const Space = styled.div`
-	margin: 5%;
-	padding: 2%;
-`
-
-const Login = ({user, setUser, password, setPassword}) => {
-	return(
-		<form>
-			<CenteredDiv>
-				<Space>
-				<Input placeholder="Username" onChange={(e)=> setUser(e.value)}/>
-			</Space>
-					<Space>
-				<Input placeholder="Password" onChange={(e)=> setPassword(e.value)}/>
-			</Space>
-			<Button>Hello world</Button>
-		</CenteredDiv>
-		</form>
-	)
-}
+const Login = ({
+    user,
+    setUser,
+    password,
+    setPassword,
+    loggedIn,
+    setLoggedIn
+}) => {
+    const [toRegister, setToRegister] = useState(false);
+    return (
+        <CenteredDiv>
+            {toRegister === false ? (
+                <>
+                    <Space>
+                        <Title>Logged out from hotspot</Title>
+                    </Space>
+                    <Space>
+                        <Input
+                            placeholder="Please enter your username"
+                            onChange={(e) => {
+                                setUser(e.target.value);
+                            }}
+                        />
+                    </Space>
+                    <Space>
+                        <Input
+                            type="password"
+                            placeholder="Please enter your password"
+                            onChange={(e) => {
+                                setPassword(e.target.value);
+                            }}
+                        />
+                    </Space>
+                    <Space>
+                        <Button primary onClick={() => setLoggedIn(true)}>Login</Button>
+                    </Space>
+                    <Space>
+                        <Button onClick={() => setToRegister(true)}>
+                            Register
+                        </Button>
+                    </Space>
+                </>
+            ) : (
+                <Register setUser={setUser} setPassword={setPassword} setToRegister={setToRegister}/>
+            )}
+        </CenteredDiv>
+    );
+};
 
 export default Login;
